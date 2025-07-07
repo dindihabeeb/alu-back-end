@@ -14,7 +14,7 @@ if __name__ == "__main__":
     todo = requests.get(todo_url)
 
     all_tasks = [task for task in todo.json()]
-    completed = [task for task in todo.json() if task.get('completed')]
+    completed = [task for task in todo.json() if task.get('completed') is True]
 
     print("Employee {} is done with tasks({}/{}):"
           .format(name, len(completed), len(all_tasks)))
